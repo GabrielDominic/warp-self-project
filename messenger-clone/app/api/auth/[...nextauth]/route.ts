@@ -5,7 +5,7 @@ import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
-import prisma from '@/app/libs/prismadb';
+import prisma from '../../../libs/prismadb';
 
 export const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma),
@@ -35,13 +35,13 @@ export const authOptions: AuthOptions = {
                     }
                 });
 
-                if (!user || !user?.hasedPassword) {
+                if (!user || !user?.hashedPassword) {
                     throw new Error('Invalid credentials');
                 }
 
                 const isCorrectPassword = await bcrypt.compare(
                     credentials.password,
-                    user.hashedpassword
+                    user.hashedPassword
                 );
 
                 if (!isCorrectPassword) {
@@ -62,4 +62,3 @@ export const authOptions: AuthOptions = {
 const handler = NextAuth(authOptions);
 
 export {handler as GET, handler as POST};
-    
