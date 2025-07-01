@@ -29,8 +29,8 @@ const MobileItem: React.FC<MobileItemProps > = (
         onClick={onClick}
         href={href}
         className={clisx(`
-            group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold text-gray-500 hover:text-black hover:bg-gray-100`,
-            active && "bg-gray-100 text-black"
+            group flex gap-x-3 p-4 text-sm leading-6 font-semibold w-full justify-center text-gray-500 hover:text-black hover:bg-gray-100`,
+            active && `bg-gray-100 text-black`,
         )}
         >
             <Icon className='h-6 w-6'></Icon>
