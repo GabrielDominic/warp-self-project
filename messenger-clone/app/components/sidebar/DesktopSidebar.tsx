@@ -24,7 +24,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = (
     return (
         <>
             <SettingsModal
-                currentUser={currentUser}
+                currentUser = {currentUser!}
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
             />
