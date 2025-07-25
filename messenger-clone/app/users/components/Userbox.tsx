@@ -11,7 +11,7 @@ interface UserboxProps {
     data: User
 }
 
-const Userbox = ({
+const Userbox: React.FC<UserboxProps> = ({
     data
 }) => {
     const router = useRouter();
