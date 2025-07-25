@@ -26,7 +26,7 @@ const Userbox: React.FC<UserboxProps> = ({
         .then((data) => {
             router.push(`/conversations/${data.data.id}`);
         })
-    }, []);
+    }, [data.id, router]);
 
     return (
         <>
